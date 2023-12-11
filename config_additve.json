@@ -1,0 +1,62 @@
+{
+  "dataset": {
+    "settings": {
+      "source_file": "",
+      "target_folder_name": ""
+    },
+    "dir": {
+      "root": "",
+      "dataset": "",
+      "model": "",
+      "checkpoint": "",
+      "postprocess": ""
+    },
+    "specs": {
+      "number_trajectories": 16,
+      "number_timesteps": 80,
+      "trajectories_train": 12,
+      "trajectories_test": 3,
+      "trajectories_validate": 1
+    }
+  },
+  "model": {
+    "settings": {
+      "name": "",
+      "model_type": "mgn",
+      "model_type_prefix": "dataset_cone_0.5",
+      "verbose": 0,
+      "device": "cuda",
+      "num_workers": 50,
+      "pin_memory": false,
+      "shuffle_dataloader": false 
+    },
+    "data": {
+      "trajectories_train": 12,
+      "trajectories_test": 3,
+      "trajectories_validate": 1,
+      "shuffle_trajectories": true,
+      "seed": 5
+    },
+    "architecture": {
+      "num_layers": 5,
+      "batch_size": 30,
+      "hidden_dim": 5,
+      "epochs": 300,
+      "opt": "adam",
+      "opt_scheduler": "none",
+      "opt_restart": 0,
+      "opt_decay_rate": 0.5,
+      "weight_decay": 0.0005,
+      "lr": 0.001
+    },
+    "postprocessing": {
+      "save_feature_val": false,
+      "save_best_model": true
+    }
+  },
+  "best_model": {
+    "file_pt": "",
+    "file_csv": "",
+    "plots": ""
+  }
+}
